@@ -1,0 +1,138 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+:root{
+	--bg-color: #cfc6b9;
+	--main-color: #c0976f;
+	--caret-color: #7d5448;
+	--sub-color: #b48a5f;
+	--sub-alt-color: #d0bca7;
+	--text-color: #5c3b31;
+	--error-color: #e9632d;
+	--error-extra-color: #e9632d;
+	--colorful-error-color: #e9632d;
+	--colorful-error-extra-color: #e9632d;
+}
+.flashes{
+	color:var(--error-color);
+}
+.back-button {
+	position: absolute;
+	top: 47px;
+	right: 9%;
+	padding: 10px 45px;
+	border-radius: 5px;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	cursor: pointer;
+	font-size: 12px;
+}
+.back-button:hover{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+body{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:100vh;
+	background-color: var(--bg-color);
+}
+.container{
+	border:solid 2px var(--text-color);
+	padding: 28px;
+	margin: 0 28px;
+	box-shadow: 0 15px 20px rgba(0,0,0,0.5);
+	border-radius: 5px;
+}
+h2{
+	font-size: 26px;
+	font-weight: 600;
+	text-align: left;
+	color: var(--text-color);
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--sub-color);
+}
+.content{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px 0;
+}
+
+.input-box{
+	display:flex;
+	flex-wrap: wrap;
+	width: 50%;
+	padding-bottom: 15px;
+}
+
+.input-box:nth-child(2n){
+	justify-content:end;
+}
+.input-box label{
+	width: 95%;
+	font-weight:bold;
+	margin:5px 0;
+	color:var(--text-color);
+}
+.input-box input{
+	height: 50px;
+	width: 95%;
+	padding: 0 10px;
+	border-radius: 5px;
+	border: 1px solid var(--text-color);
+	outline:none;
+	color: var(--text-color);
+}
+.input-box input:is(:focus, :valid){
+	box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.alert p{
+	font-size: 14px;
+	color: var(--text-color);
+	margin: 5px 0;
+	padding: 10px;
+}
+.alert a{
+	text-decoration: none;
+}
+.alert a:hover{
+	text-decoration: underline;
+}
+.form-button{
+	margin: 20px 0;
+	margin-top: 1px;
+	width: 100%;
+	padding: 10px;
+	display: block;
+	font-size: 20px;
+	color: var(--bg-color);
+	border-radius: 5px;
+	background-color: var(--text-color);
+	cursor:pointer;
+}
+.form-button:hover{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+@media(max-width:600px){
+	.container{
+		min-width: 280px;
+	}
+	.content{
+		max-height:380px;
+		overflow:auto;
+	}
+	.input-box{
+		margin-bottom: 12px;
+		width:100%;
+	}
+	.input-box:nth-child(2n){
+		justify-content: space-between;
+	}
+
+}

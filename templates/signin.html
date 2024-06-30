@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradaholic</title>
+	<link rel="stylesheet" href="../static/signin-signup-styles.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <a href="{{url_for('index')}}"><button class="back-button" >Back</button></a>
+        <form action="{{url_for('profile')}}" method="POST">
+            <h2>Sign In</h2>
+            <div class="content">
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="input-box">
+                    <label for="pw">Password</label>
+                    <input type="password" placeholder="Password" name="pw" required>
+                </div>
+                <input type="hidden" name='currpage' value="login">
+            <button type="submit" class="form-button">Sign In</button>
+        </form>
+        <div class="flashes">
+            {% for message in get_flashed_messages() %}
+                <p>{{message}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

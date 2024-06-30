@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradaholic</title>
+	<link rel="stylesheet" href="../static/index-styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+<body>
+	<div class="header">
+		<nav>
+			<div class="logo">
+				<img src="../static/images/logo.png" class="logo">
+				<!-- <h1>Gradaholic</h1> -->
+			</div>
+			
+			<div>
+				<a href="{{url_for('signin')}}"><button>Sign In</button></a>
+			</div>
+		</nav>
+		<div class="header-content">
+			<h1>Gradaholic</h1>
+			<h3>A competitive and gamified academic experience</h3>
+			<p>Ready to start? Enter your email to create an account</p>
+			<form action="{{url_for('register_personal_details')}}" method="POST" class="email-signup">
+				<input type="email" name="email" placeholder="Email Address" requried>
+				<button type="submit">Get Started</button>
+			</form>
+			<div class="flashes">
+				{% for message in get_flashed_messages() %}
+					<p>{{message}}</p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="features">
+		<div class="row">
+			<div class="text-col">
+				<h2>Wise words from Adrian</h2>
+				<p>asldfjajslkfjlkfajslkfsjl;f sfldsjlfasjl ajs klasdfjkldfkl jg asdfasfsdfad e,,fsad asdffsa s,df</p>
+			</div>
+			<div class="img-col">
+				<img src="../static/images/pic1.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="img-col">
+				<img src="../static/images/pic2.jpg" alt="">
+			</div>
+			<div class="text-col">
+				<h2>some words by</h2>
+				<p>asldfjajslkfjlkfajslkfsjl;f sfldsjlfasjl ajs klasdfjkldfkl jg asdfasfsdfad e,,fsad asdffsa s,df</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="text-col">
+				<h2>some words</h2>
+				<p>asldfjajslkfjlkfajslkfsjl;f sfldsjlfasjl ajs klasdfjkldfkl jg asdfasfsdfad e,,fsad asdffsa s,df</p>
+			</div>
+			<div class="img-col">
+				<img src="../static/images/placeholderimage.png" alt="">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="img-col">
+				<img src="../static/images/placeholderimage.png" alt="">
+			</div>
+			<div class="text-col">
+				<h2>some words</h2>
+				<p>asldfjajslkfjlkfajslkfsjl;f sfldsjlfasjl ajs klasdfjkldfkl jg asdfasfsdfad e,,fsad asdffsa s,df</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<h2>Questions? call 99999999</h2>
+
+		<div class="row">
+			<div class="col">
+				<a href="">Terms and Conditions</a>
+				<a href="">My Instagram</a>
+				<a href="">My LinkedIn</a>
+			</div>
+			<div class="col">
+				<a href="">Help Center</a>
+				<a href="">Jobs</a>
+				<a href="">Cookies Preferences</a>
+				<a href="">Legal Notices</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

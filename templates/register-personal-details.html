@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradaholic</title>
+	<link rel="stylesheet" href="../static/signin-signup-styles.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../"><button class="back-button">Back</button></a>
+        <form action="{{url_for('profile')}}" method="POST">
+            <h2>Registration</h2>
+            <div class="content">
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" placeholder="Full Name" name="name" required>
+                </div>
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="input-box">
+                    <label for="pw">Password</label>
+                    <input type="password" placeholder="Password" name="pw" required>
+                </div>
+                <div class="input-box">
+                    <label for="rpw">Retype Password</label>
+                    <input type="password" placeholder="Retype Password" name="rpw" required>
+                </div>
+
+                <input type="hidden" name="email" value="{{email}}">
+                <input type="hidden" name="currpage" value="personaldetails">
+
+            </div>
+            <div class="alert">
+                <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may recieve SMS notifications from us and can opt out at any time</p>
+            </div>
+            <button type="submit" class="form-button">Sign Up</button>    
+            <div class="flashes">
+                {% for message in get_flashed_messages() %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </div>
+        </form>
+
+    </div>
+    
+
+</body>
+</html>
